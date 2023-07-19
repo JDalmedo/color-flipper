@@ -17,7 +17,7 @@ const COLOR_PALETTE = {
     colorPickerSelect.append(option);
    })
   };
-  addOptionsToColorPicker();
+  
 
   const addEventListenerToColorPicker = () => {
     const colorPickerSelect = document.querySelector("#color-picker");
@@ -25,11 +25,10 @@ const COLOR_PALETTE = {
     colorPickerSelect.addEventListener("change", (event) => {
     const newColor = event.target.value;
     document.body.style.backgroundColor = newColor;
-    colorName.innerText = COLOR_PALETTE[newColor];
     const colorNameText = `${COLOR_PALETTE[newColor]} | ${newColor}`;
     colorName.innerText = COLOR_PALETTE[newColor] ? colorNameText : "-";
     
     })
   };
-    
+    addOptionsToColorPicker();
     addEventListenerToColorPicker();
